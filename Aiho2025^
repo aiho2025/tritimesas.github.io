@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+class Check
+{
+    private:
+       int i;
+    public:
+       Check(): i(0) {  }
+       void operator ++() 
+          { ++i; }
+       void Display() 
+          { cout << "i=" << i << endl; }
+};
+int main()
+{
+    Check obj;
+    // Displays the value of data member i for object obj
+    obj.Display();
+    // Invokes operator function void operator ++(/random variable)
+    ++obj; 
+  
+    // Displays the value of data member i for object obj
+    obj.Display();
+    return 0;
+}
+i=0
+i=1
+#include <iostream>
+using namespace std;
+int hcf(int n1, int n2);
+int main()
+{
+   int n1, n2;
+   cout << "Enter two positive integers: ";
+   cin >> n1 >> n2;
+   cout << "H.C.F of " << n1 << " & " <<  n2 << " is: " << hcf(n1, n2);
+   return 0;
+}
+int hcf(int n1, int n2)
+{
+    if (n2 != 0)
+       return hcf(n2, n1 % n2);
+    else 
+       return n1;
+}
+  then; calculateinclude <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    float a, b, c, x1, x2, discriminant, realPart, imaginaryPart;
+    cout << "Enter coefficients a, b and c: ";
+    cin >> a >> b >> c;
+    discriminant = b*b - 4*a*c;
+    
+    if (discriminant > 0) {
+        x1 = (-b + sqrt(discriminant)) / (2*a);
+        x2 = (-b - sqrt(discriminant)) / (2*a);
+        cout << "Roots are real and different." << endl;
+        cout << "x1 = " << x1 << endl;
+        cout << "x2 = " << x2 << endl;
+    }
+    
+    else if (discriminant == 0) {
+        cout << "Roots are real and same." << endl;
+        x1 = (-b + sqrt(discriminant)) / (2*a);
+        cout << "x1 = x2 =" << x1 << endl;
+    }
+    else {
+        realPart = -b/(2*a);
+        imaginaryPart =sqrt(-discriminant)/(2*a);
+        cout << "Roots are complex and different."  << endl;
+        cout << "x1 = " << realPart << "+" << imaginaryPart << "i" << endl;
+        cout << "x2 = " << realPart << "-" << imaginaryPart << "i" << endl;
+    }
+    return 0;
